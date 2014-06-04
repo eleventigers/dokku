@@ -14,13 +14,13 @@ Ubuntu 14.04 x64 or 12.04 x64. Ideally have a domain ready to point to your host
 
 ### Stable
 
-    $ wget -qO- https://raw.github.com/progrium/dokku/v0.2.3/bootstrap.sh | sudo DOKKU_TAG=v0.2.3 bash
+    $ wget -qO- https://raw.github.com/eleventigers/dokku/v0.2.3/bootstrap.sh | sudo DOKKU_TAG=v0.2.3 bash
 
 **Note**: Users on 12.04 will need to run `apt-get install -y python-software-properties` before bootstrapping stable.
 
 ### Development
 
-    $ wget -qO- https://raw.github.com/progrium/dokku/master/bootstrap.sh | sudo bash
+    $ wget -qO- https://raw.github.com/eleventigers/dokku/master/bootstrap.sh | sudo bash
 
 This may take around 5 minutes. Certainly better than the several hours it takes to bootstrap Cloud Foundry.
 
