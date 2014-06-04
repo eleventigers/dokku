@@ -65,7 +65,7 @@ case "$1" in
 
     # start the app
     DOCKER_ARGS=$(: | pluginhook docker-args $APP)
-    id=$(docker run -d -p 5000 -e PORT=5000 $DOCKER_ARGS -e DISPLAY=:0.0 -v=/tmp/.X11-unix:/tmp/.X11-unix:rw -i -t $IMAGE /bin/bash -c "/start web")
+    id=$(docker run -d -p 5000 -e PORT=5000 $DOCKER_ARGS -e DISPLAY=:0.0 --lxc-conf="lxc.tty = 0" -v=/tmp/.X11-unix:/tmp/.X11-unix:rw $IMAGE /bin/bash -c "/usr/bin/X & /start web")
     echo $id > "$DOKKU_ROOT/$APP/CONTAINER"
     port=$(docker port $id 5000 | sed 's/0.0.0.0://')
     echo $port > "$DOKKU_ROOT/$APP/PORT"
